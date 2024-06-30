@@ -4,7 +4,7 @@ import com.mjc.school.repository.model.AuthorModel;
 import com.mjc.school.repository.model.NewsModel;
 import com.mjc.school.repository.reader.DataReader;
 import com.mjc.school.repository.reader.DataReaderImpl;
-import com.mjc.school.repository.source.DataSource;
+import com.mjc.school.repository.DataSource;
 
 import java.util.List;
 

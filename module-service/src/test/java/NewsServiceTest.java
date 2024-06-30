@@ -1,7 +1,7 @@
 import com.mjc.school.repository.impl.DataSourceImpl;
 import com.mjc.school.repository.model.AuthorModel;
 import com.mjc.school.repository.model.NewsModel;
-import com.mjc.school.repository.source.DataSource;
+import com.mjc.school.repository.DataSource;
 import com.mjc.school.service.MapperToDto;
 import com.mjc.school.service.NewsService;
 import com.mjc.school.service.dto.NewsDto;
