@@ -1,7 +1,7 @@
 package com.mjc.school;
 
 import com.mjc.school.controller.RequestController;
-import com.mjc.school.repository.impl.RepositoryDataSource;
+import com.mjc.school.repository.impl.DataSourceImpl;
 import com.mjc.school.service.MapperToDto;
 import com.mjc.school.service.NewsService;
 import com.mjc.school.service.dto.NewsDto;
@@ -18,7 +18,7 @@ public class Main {
     public static void main(String[] args) {
         int operation=0;
         Scanner scanner = new Scanner(System.in);
-        NewsService newsService = new NewsServiceImpl(new MapperToDto(), new RepositoryDataSource(authorPath, newsPath), Validator.getInstance());
+        NewsService newsService = new NewsServiceImpl(new MapperToDto(), new DataSourceImpl(authorPath, newsPath), Validator.getInstance());
         RequestController requestController = new RequestController(newsService);
 
         do{

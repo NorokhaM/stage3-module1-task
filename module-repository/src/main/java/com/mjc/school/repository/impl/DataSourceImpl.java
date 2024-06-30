@@ -8,17 +8,17 @@ import com.mjc.school.repository.source.DataSource;
 
 import java.util.List;
 
-public class RepositoryDataSource implements DataSource    {
+public class DataSourceImpl implements DataSource    {
     private List<AuthorModel> authors;
     private List<NewsModel> newsSourse;
     private DataReader dataReader;
 
-    public RepositoryDataSource(List<AuthorModel> authors, List<NewsModel> newsSourse) {
+    public DataSourceImpl(List<AuthorModel> authors, List<NewsModel> newsSourse) {
         this.authors = authors;
         this.newsSourse = newsSourse;
     }
 
-    public RepositoryDataSource(String authorsPath, String newsPath) {
+    public DataSourceImpl(String authorsPath, String newsPath) {
         dataReader=new DataReaderImpl();
         authors = dataReader.readAuthorsData(authorsPath);
         newsSourse = dataReader.readNewsData(newsPath);
