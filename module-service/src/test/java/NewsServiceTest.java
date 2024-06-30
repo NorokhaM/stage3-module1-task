@@ -1,4 +1,4 @@
-import com.mjc.school.repository.impl.Repository;
+import com.mjc.school.repository.impl.RepositoryDataSource;
 import com.mjc.school.repository.model.AuthorModel;
 import com.mjc.school.repository.model.NewsModel;
 import com.mjc.school.repository.source.DataSource;
@@ -11,7 +11,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +39,7 @@ public class NewsServiceTest {
         news.add(new NewsModel(4L, "title4", "content4", LocalDateTime.parse("2022-10-12T21:41:39"), LocalDateTime.parse("2022-10-12T21:41:39"), 1L));
         news.add(new NewsModel(5L, "title5", "content5", LocalDateTime.parse("2021-10-12T21:41:39"), LocalDateTime.parse("2021-10-12T21:41:39"), 3L));
         mapperToDto = new MapperToDto();
-        dataSource= new Repository(authors, news);
+        dataSource= new RepositoryDataSource(authors, news);
         newsService = new NewsServiceImpl(mapperToDto, dataSource, Validator.getInstance());
     }
 

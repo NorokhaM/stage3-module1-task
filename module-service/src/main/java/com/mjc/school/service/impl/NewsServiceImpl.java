@@ -37,7 +37,7 @@ public class NewsServiceImpl implements NewsService {
     @Override
     public NewsDto getNewsById(Long id) {
         try{
-            return mapper.convertToDto(dataSource.readNewsById(id));
+            return mapper.convertToDto(dataSource.readById(id));
         } catch (IllegalArgumentException e){
             System.out.println("News with id "+id+" not found");
             return null;
@@ -61,7 +61,7 @@ public class NewsServiceImpl implements NewsService {
         LocalDateTime date=LocalDateTime.parse(LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
         try{
             validator.validate(newsDto);
-            return mapper.convertToDto(dataSource.updateNews(new NewsModel(id, newsDto.getTitle(), newsDto.getContent(), dataSource.readNewsById(id).getCreateDate(), date, newsDto.getAuthorId())));
+            return mapper.convertToDto(dataSource.updateNews(new NewsModel(id, newsDto.getTitle(), newsDto.getContent(), dataSource.readById(id).getCreateDate(), date, newsDto.getAuthorId())));
         } catch(ContentLengthException | InvalidDataFormatException | TitleLengthException e){
             System.out.println(e.getMessage());
         }

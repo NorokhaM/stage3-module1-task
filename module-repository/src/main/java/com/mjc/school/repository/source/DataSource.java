@@ -10,11 +10,11 @@ public interface DataSource {
 
     List<NewsModel> readAllNews();
 
-    NewsModel readNewsById(Long id);
+    NewsModel readById(Long id);
 
     NewsModel createNews(NewsModel news);
 
     NewsModel updateNews(NewsModel news);
 
-    void deleteNewsById(Long id);
+    boolean deleteNewsById(Long id);
 }

@@ -8,17 +8,17 @@ import com.mjc.school.repository.source.DataSource;
 
 import java.util.List;
 
-public class Repository implements DataSource    {
+public class RepositoryDataSource implements DataSource    {
     private List<AuthorModel> authors;
     private List<NewsModel> newsSourse;
     private DataReader dataReader;
 
-    public Repository(List<AuthorModel> authors, List<NewsModel> newsSourse) {
+    public RepositoryDataSource(List<AuthorModel> authors, List<NewsModel> newsSourse) {
         this.authors = authors;
         this.newsSourse = newsSourse;
     }
 
-    public Repository(String authorsPath, String newsPath) {
+    public RepositoryDataSource(String authorsPath, String newsPath) {
         dataReader=new DataReaderImpl();
         authors = dataReader.readAuthorsData(authorsPath);
         newsSourse = dataReader.readNewsData(newsPath);
@@ -35,7 +35,7 @@ public class Repository implements DataSource    {
     }
 
     @Override
-    public NewsModel readNewsById(Long id) {
+    public NewsModel readById(Long id) {
         for (NewsModel news : newsSourse) {
             if (news.getId().equals(id)) {
                 return news;
@@ -70,13 +70,14 @@ public class Repository implements DataSource    {
     }
 
     @Override
-    public void deleteNewsById(Long id) {
+    public boolean deleteNewsById(Long id) {
         for (NewsModel newsModel : newsSourse) {
             if (newsModel.getId().equals(id)) {
                 newsSourse.remove(newsModel);
-                return;
+                return true;
             }
         }
+        return false;
     }
 
 }
