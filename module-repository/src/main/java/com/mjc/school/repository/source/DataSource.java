@@ -16,5 +16,5 @@ public interface DataSource {
 
     NewsModel updateNews(NewsModel news);
 
-    boolean deleteNewsById(Long id);
+    Boolean deleteNewsById(Long id);
 }

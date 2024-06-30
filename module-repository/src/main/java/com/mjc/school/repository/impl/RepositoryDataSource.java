@@ -70,7 +70,7 @@ public class RepositoryDataSource implements DataSource    {
     }
 
     @Override
-    public boolean deleteNewsById(Long id) {
+    public Boolean deleteNewsById(Long id) {
         for (NewsModel newsModel : newsSourse) {
             if (newsModel.getId().equals(id)) {
                 newsSourse.remove(newsModel);
