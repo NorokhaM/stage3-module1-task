@@ -13,5 +13,5 @@ public interface NewsService {
 
     NewsDto updateNews(Long id, NewsDto newsDto);
 
-    boolean deleteNews(Long id);
+    void deleteNews(Long id);
 }

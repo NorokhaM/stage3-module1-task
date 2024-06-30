@@ -69,9 +69,8 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public boolean deleteNews(Long id) {
+    public void deleteNews(Long id) {
         dataSource.deleteNewsById(id);
-        return true;
     }
 
 
