@@ -2,4 +2,8 @@ rootProject.name = 'stage3-module1-task'
 include 'module-main'
 include 'module-main'
 include 'module-main'
+include 'module-repository'
+include 'module-repository:module-service'
+findProject(':module-repository:module-service')?.name = 'module-service'
+include 'module-service'
 
