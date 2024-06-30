@@ -6,4 +6,7 @@ include 'module-repository'
 include 'module-repository:module-service'
 findProject(':module-repository:module-service')?.name = 'module-service'
 include 'module-service'
+include 'module-repository:module-web'
+findProject(':module-repository:module-web')?.name = 'module-web'
+include 'module-web'
 

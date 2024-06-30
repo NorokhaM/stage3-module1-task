@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="NewsServiceTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-06-30T14:15:08" hostname="LENOVO_PC" time="0.406">
+  <properties/>
+  <testcase name="testDeleteNewsWithValidId()" classname="NewsServiceTest" time="0.223"/>
+  <testcase name="testGetNewsByValidId()" classname="NewsServiceTest" time="0.128"/>
+  <testcase name="testUpdateNews()" classname="NewsServiceTest" time="0.018"/>
+  <testcase name="testGetAllNews()" classname="NewsServiceTest" time="0.015"/>
+  <testcase name="testCreateNews()" classname="NewsServiceTest" time="0.006"/>
+  <testcase name="testDeleteNewsWithInvalidId()" classname="NewsServiceTest" time="0.002"/>
+  <testcase name="testGetNewsByInvalidId()" classname="NewsServiceTest" time="0.003"/>
+  <system-out><![CDATA[News with id 1 not found
+News with id 10 not found
+News with id 10 not found
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

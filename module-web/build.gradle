@@ -2,6 +2,7 @@ plugins {
     id 'java'
 }
 
+group = 'com.mjc.school.controller'
 version = 'unspecified'
 
 repositories {
@@ -11,9 +12,7 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    implementation project(":module-web")
-    implementation project(":module-service")
-    implementation project(":module-repository")
+    implementation project(':module-service')
 }
 
 test {
